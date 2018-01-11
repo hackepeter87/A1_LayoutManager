@@ -23,19 +23,23 @@ public class OperationButtonListener implements ActionListener {
             zahl = Double.parseDouble(this.textField.getText());
         }
         switch (op) {
-            case "C":
+            case "clear":
                 this.textField.setText("");
                 this.rechner.clear();
                 break;
-            case "+":
-            case "-":
-                this.rechner.setOperandB(zahl);
-                this.rechner.setOperation(op);
+            case "plus":
+                this.rechner.setOperandA(zahl);
+                this.rechner.setOperation("+");
                 this.textField.setText("");
                 break;
-            case "=":
+            case "minus":
+                this.rechner.setOperandA(zahl);
+                this.rechner.setOperation("-");
+                this.textField.setText("");
+                break;
+            case "equals":
                 this.rechner.setOperandB(zahl);
-                this.rechner.setOperation("=");
+                this.rechner.executeOperation();
                 textField.setText(Double.toString(this.rechner.getErgebnis()));
                 break;
         }

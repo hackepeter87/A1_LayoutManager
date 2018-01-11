@@ -3,7 +3,7 @@ package Taschenrechner;
 public class Rechner {
     private double operandA = 0D;
     private double operandB = 0D;
-    private String operation = "";
+    private String operation = null;
     private double ergebnis = 0D;
 
     public void setOperandA(double operandA) {
@@ -15,13 +15,6 @@ public class Rechner {
     }
 
     public void setOperation(String operation) {
-        setOperandA(this.ergebnis);
-
-        if(!(this.operation.length()==0)) {
-            this.executeOperation();
-        } else {
-            this.ergebnis = this.operandB;
-        }
         this.operation = operation;
     }
 
@@ -42,7 +35,7 @@ public class Rechner {
 
     public void clear() {
         this.operandA = this.operandB = this.ergebnis = 0D;
-        this.operation = "";
+        this.operation = null;
     }
 
     private double operationAdd() {

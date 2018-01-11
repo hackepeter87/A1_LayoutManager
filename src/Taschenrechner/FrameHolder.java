@@ -25,26 +25,53 @@ public class FrameHolder {
         panel.add(textField, BorderLayout.NORTH);
 
         JPanel nummernBlock = new JPanel();
+        JButton button;
         nummernBlock.setLayout(new GridLayout(4,3,2,2));
-        nummernBlock.add(new JButton("7"));
-        nummernBlock.add(new JButton("8"));
-        nummernBlock.add(new JButton("9"));
-        nummernBlock.add(new JButton("4"));
-        nummernBlock.add(new JButton("5"));
-        nummernBlock.add(new JButton("6"));
-        nummernBlock.add(new JButton("1"));
-        nummernBlock.add(new JButton("2"));
-        nummernBlock.add(new JButton("3"));
-        nummernBlock.add(new JButton("."));
-        nummernBlock.add(new JButton("0"));
-        nummernBlock.add(new JButton("+/-"));
+        button = new JButton("7");
+        button.setActionCommand("seven");
+        nummernBlock.add(button);
+        button = new JButton("8");
+        button.setActionCommand("eight");
+        nummernBlock.add(button);
+        button = new JButton("9");
+        button.setActionCommand("nine");
+        nummernBlock.add(button);
+        button = new JButton("4");
+        button.setActionCommand("four");
+        nummernBlock.add(button);
+        button = new JButton("5");
+        button.setActionCommand("five");
+        nummernBlock.add(button);
+        button = new JButton("6");
+        button.setActionCommand("six");
+        nummernBlock.add(button);
+        button = new JButton("1");
+        button.setActionCommand("one");
+        nummernBlock.add(button);
+        button = new JButton("2");
+        button.setActionCommand("two");
+        nummernBlock.add(button);
+        button = new JButton("3");
+        button.setActionCommand("three");
+        nummernBlock.add(button);
+        button = new JButton(".");
+        button.setActionCommand("period");
+        nummernBlock.add(button);
+        button = new JButton("0");
+        button.setActionCommand("zero");
+        nummernBlock.add(button);
+        button = new JButton("+/-");
+        button.setActionCommand("sign");
+        nummernBlock.add(button);
+
         NumberButtonListener numListener = new NumberButtonListener(textField);
         ModifierButtonListener modListener = new ModifierButtonListener(textField);
         for(Component c : nummernBlock.getComponents()) {
-            if(((JButton) c).getText().contains(".") || ((JButton) c).getText().contains("+/-")) {
-                ((JButton) c).addActionListener(modListener);
+            JButton b = (JButton) c;
+            if(b.getText().contains(".") || b.getText().contains("+/-")) {
+                b.addActionListener(modListener);
             } else {
-                ((JButton) c).addActionListener(numListener);
+                b.addActionListener(numListener);
             }
         }
         panel.add(nummernBlock, BorderLayout.CENTER);
@@ -52,10 +79,18 @@ public class FrameHolder {
 
         JPanel opBlock = new JPanel();
         opBlock.setLayout(new GridLayout(4,1,2,2));
-        opBlock.add(new JButton("C"));
-        opBlock.add(new JButton("+"));
-        opBlock.add(new JButton("-"));
-        opBlock.add(new JButton("="));
+        button = new JButton("C");
+        button.setActionCommand("clear");
+        opBlock.add(button);
+        button = new JButton("+");
+        button.setActionCommand("plus");
+        opBlock.add(button);
+        button = new JButton("-");
+        button.setActionCommand("minus");
+        opBlock.add(button);
+        button = new JButton("=");
+        button.setActionCommand("equals");
+        opBlock.add(button);
         OperationButtonListener opListener = new OperationButtonListener(textField);
         for(Component c: opBlock.getComponents()) {
             ((JButton) c).addActionListener(opListener);

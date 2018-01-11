@@ -14,22 +14,41 @@ public class NumberButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         String text = actionEvent.getActionCommand();
+        String number = null;
         switch (text) {
-            case "0":
-            case "1":
-            case "2":
-            case "3":
-            case "4":
-            case "5":
-            case "6":
-            case "7":
-            case "8":
-            case "9":
-                textField.setText(textField.getText() + text);
+            case "zero":
+                number = "0";
                 break;
-
+            case "one":
+                number = "1";
+                break;
+            case "two":
+                number = "2";
+                break;
+            case "three":
+                number = "3";
+                break;
+            case "four":
+                number = "4";
+                break;
+            case "five":
+                number = "5";
+                break;
+            case "six":
+                number = "6";
+                break;
+            case "seven":
+                number = "7";
+                break;
+            case "eight":
+                number = "8";
+                break;
+            case "nine":
+                number = "9";
+                break;
+            default:
+                System.exit(-1);
         }
-
-
+        textField.setText(textField.getText() + number);
     }
 }

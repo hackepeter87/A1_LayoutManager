@@ -15,7 +15,7 @@ public class ModifierButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
         String text = actionEvent.getActionCommand();
         switch (text) {
-            case ".":
+            case "period":
                 if (!textField.getText().contains(".")) {
                     if (textField.getText().length() == 0) {
                         textField.setText("0");
@@ -23,7 +23,7 @@ public class ModifierButtonListener implements ActionListener {
                     textField.setText(textField.getText() + ".");
                 }
                 break;
-            case "+/-":
+            case "sign":
                 String inhalt = textField.getText();
                 if (inhalt.charAt(0) == '-') {
                     textField.setText(inhalt.substring(1, inhalt.length()));
