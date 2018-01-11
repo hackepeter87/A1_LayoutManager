@@ -15,7 +15,7 @@ public class OperationButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        String op = ((JButton)actionEvent.getSource()).getText();
+        String op = actionEvent.getActionCommand();
         double zahl = 0D;
         if (this.textField.getText().length()==0) {
             zahl = 0D;

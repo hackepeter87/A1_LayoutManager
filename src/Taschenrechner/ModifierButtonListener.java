@@ -13,7 +13,7 @@ public class ModifierButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        String text = ((JButton) actionEvent.getSource()).getText();
+        String text = actionEvent.getActionCommand();
         switch (text) {
             case ".":
                 if (!textField.getText().contains(".")) {

@@ -15,7 +15,7 @@ public class Rechner {
     }
 
     public void setOperation(String operation) {
-        this.operandA = this.ergebnis;
+        setOperandA(this.ergebnis);
 
         if(!(this.operation.length()==0)) {
             this.executeOperation();

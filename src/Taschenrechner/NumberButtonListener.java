@@ -13,7 +13,7 @@ public class NumberButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        String text = ((JButton)actionEvent.getSource()).getText();
+        String text = actionEvent.getActionCommand();
         switch (text) {
             case "0":
             case "1":
